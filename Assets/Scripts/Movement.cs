@@ -5,23 +5,38 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
-    public float mainThrust = 400;
-    public float sideThrust = 80;
+    AudioSource rocketMainAudio;
+
+    public float mainThrust = 400f;
+    public float sideThrust = 80f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rocketMainAudio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        ProcessInput();
+        mainEngine();
+        rotateBurst();
     }
 
-    void ProcessInput(){
+    void mainEngine(){
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            rocketMainAudio.Play();
+/*             if(!rocketMain.isPlaying){
+                rocketMain.play();
+            } */
         }
+        else{
+            rocketMainAudio.Stop();
+        }
+    }
+
+    void rotateBurst(){
+
         if(Input.GetKey(KeyCode.A))
         {
             ApplyRotation(sideThrust);
