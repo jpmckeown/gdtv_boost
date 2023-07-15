@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
+    public float mainThrust = 1000;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,8 +19,7 @@ public class Movement : MonoBehaviour
 
     void ProcessInput(){
         if(Input.GetKey(KeyCode.Space)) {
-            rb.AddRelativeForce(0,1,0);
-            Debug.Log("Space key pressed for rocket motor.");
+            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.A)){
             Debug.Log("Left arrow key pressed");
