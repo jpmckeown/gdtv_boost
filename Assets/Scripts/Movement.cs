@@ -25,10 +25,10 @@ public class Movement : MonoBehaviour
     void mainEngine(){
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            rocketMainAudio.Play();
-/*             if(!rocketMain.isPlaying){
-                rocketMain.play();
-            } */
+
+            if(!rocketMainAudio.isPlaying){
+                rocketMainAudio.Play();
+            }
         }
         else{
             rocketMainAudio.Stop();
