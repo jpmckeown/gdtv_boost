@@ -5,8 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
-    public float mainThrust = 700;
-    public float sideThrust = 100;
+    public float mainThrust = 400;
+    public float sideThrust = 80;
 
     void Start()
     {
