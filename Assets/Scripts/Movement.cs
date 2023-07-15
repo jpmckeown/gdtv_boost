@@ -5,7 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
-    public float mainThrust = 1000;
+    public float mainThrust = 700;
+    public float sideThrust = 100;
 
     void Start()
     {
@@ -21,12 +22,18 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.A)){
-            Debug.Log("Left arrow key pressed");
+        if(Input.GetKey(KeyCode.A))
+        {
+            ApplyRotation(sideThrust);
         }
-        else if(Input.GetKey(KeyCode.D)){
-            Debug.Log("Right arrow key pressed");
+        else if(Input.GetKey(KeyCode.D))
+        {
+            ApplyRotation(-sideThrust);
         }
     }
 
+    void ApplyRotation(float rotationDuringFrame)
+    {
+        transform.Rotate(Vector3.forward * Time.deltaTime * rotationDuringFrame);
+    }
 }
