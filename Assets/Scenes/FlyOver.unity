@@ -443,6 +443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 2882057971087156041, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4804872064926159422, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_RootOrder
       value: 3

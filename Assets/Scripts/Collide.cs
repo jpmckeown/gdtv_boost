@@ -12,7 +12,7 @@ public class Collide : MonoBehaviour
     void OnCollisionEnter(Collision other) {
         switch(other.gameObject.tag){
             case "Finish":
-                LevelDone();
+                ReachLanding();
                 break;
             case "Friendly":
                 Debug.Log("back at launchpad");
@@ -21,30 +21,36 @@ public class Collide : MonoBehaviour
                 CrashSequence();
                 break;
         }
+    }
 
-        void CrashSequence(){
-            Debug.Log("exploding rocket");
-            GetComponent<Movement>().enabled = false;
-            Invoke("ReloadLevel", DelayRestartLevel);
-        }
+    void CrashSequence(){
+        // add soundfx and particlefx
+        Debug.Log("exploding rocket");
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", delayRestartLevel);
+        // ReloadLevel();
+    }
 
-        void LevelDone(){
-            Debug.Log("landing success!");
-            LoadNextLevel();
-        }
+    void ReachLanding(){
+        // add soundfx and particlefx
+        Debug.Log("landing success!");
+        // LoadNextLevel();
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel", delayNextLevel);
+    }
 
-        void ReloadLevel(){
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
-        }
+    void ReloadLevel(){
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
 
-        void LoadNextLevel(){
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            int NextSceneIndex = currentSceneIndex + 1;
-            if(NextSceneIndex == SceneManager.sceneCountInBuildSettings){
-                NextSceneIndex = 0;
-            }
-            SceneManager.LoadScene(NextSceneIndex);
+    void LoadNextLevel(){
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        Debug.Log("next scene = " + nextSceneIndex);
+        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings){
+            nextSceneIndex = 0;
         }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
