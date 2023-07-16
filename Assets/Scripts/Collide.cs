@@ -3,22 +3,34 @@ using UnityEngine.SceneManagement;
 
 public class Collide : MonoBehaviour
 {
+    public float delayRestartLevel = 3f;
+    public float delayNextLevel = 3f;
+
     void Start(){
     }
 
     void OnCollisionEnter(Collision other) {
         switch(other.gameObject.tag){
             case "Finish":
-                Debug.Log("landing success!");
-                loadNextLevel();
+                LevelDone();
                 break;
             case "Friendly":
                 Debug.Log("back at launchpad");
                 break;
             default:
-                Debug.Log("exploding rocket");
-                ReloadLevel();
+                CrashSequence();
                 break;
+        }
+
+        void CrashSequence(){
+            Debug.Log("exploding rocket");
+            GetComponent<Movement>().enabled = false;
+            Invoke("ReloadLevel", DelayRestartLevel);
+        }
+
+        void LevelDone(){
+            Debug.Log("landing success!");
+            LoadNextLevel();
         }
 
         void ReloadLevel(){
@@ -26,9 +38,13 @@ public class Collide : MonoBehaviour
             SceneManager.LoadScene(currentSceneIndex);
         }
 
-        void loadNextLevel(){
+        void LoadNextLevel(){
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            int NextSceneIndex = currentSceneIndex + 1;
+            if(NextSceneIndex == SceneManager.sceneCountInBuildSettings){
+                NextSceneIndex = 0;
+            }
+            SceneManager.LoadScene(NextSceneIndex);
         }
     }
 }
