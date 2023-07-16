@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collide : MonoBehaviour
 {
@@ -12,7 +13,12 @@ public class Collide : MonoBehaviour
                 break;
             default:
                 Debug.Log("exploding rocket");
+                ReloadLevel();
                 break;
+        }
+
+        void ReloadLevel(){
+            SceneManager.LoadScene(0);
         }
     }
 }
