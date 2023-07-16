@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class Collide : MonoBehaviour
 {
+    void Start(){
+    }
+
     void OnCollisionEnter(Collision other) {
         switch(other.gameObject.tag){
             case "Finish":
@@ -18,7 +21,8 @@ public class Collide : MonoBehaviour
         }
 
         void ReloadLevel(){
-            SceneManager.LoadScene(0);
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
         }
     }
 }
