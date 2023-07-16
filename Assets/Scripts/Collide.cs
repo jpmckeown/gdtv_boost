@@ -10,6 +10,7 @@ public class Collide : MonoBehaviour
         switch(other.gameObject.tag){
             case "Finish":
                 Debug.Log("landing success!");
+                loadNextLevel();
                 break;
             case "Friendly":
                 Debug.Log("back at launchpad");
@@ -23,6 +24,11 @@ public class Collide : MonoBehaviour
         void ReloadLevel(){
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
+        }
+
+        void loadNextLevel(){
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
     }
 }
