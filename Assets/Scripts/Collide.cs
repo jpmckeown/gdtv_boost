@@ -5,6 +5,8 @@ public class Collide : MonoBehaviour
 {
     public float delayRestartLevel = 3f;
     public float delayNextLevel = 3f;
+    public AudioClip landingSuccessSound;
+    public AudioClip crashExplosionSound;
 
     void Start(){
     }
@@ -27,6 +29,7 @@ public class Collide : MonoBehaviour
         // add soundfx and particlefx
         Debug.Log("exploding rocket");
         GetComponent<Movement>().enabled = false;
+        crashExplosionSound.Play();
         Invoke("ReloadLevel", delayRestartLevel);
         // ReloadLevel();
     }
@@ -36,6 +39,7 @@ public class Collide : MonoBehaviour
         Debug.Log("landing success!");
         // LoadNextLevel();
         GetComponent<Movement>().enabled = false;
+        landingSuccessSound.Play();
         Invoke("LoadNextLevel", delayNextLevel);
     }
 

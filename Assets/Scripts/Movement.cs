@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    Rigidbody rb;
-    AudioSource rocketMainAudio;
-
     public float mainThrust = 400f;
     public float sideThrust = 80f;
+    public AudioClip mainThrustSound;
+
+    Rigidbody rb;
+    // AudioSource rocketMainAudio; // maybe return to this approach instead of .Play...()
 
     void Start()
     {
@@ -26,12 +27,14 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
 
-            if(!rocketMainAudio.isPlaying){
-                rocketMainAudio.Play();
-            }
+            mainThrustSound.Play();
+            // if(!rocketMainAudio.isPlaying){
+            //     rocketMainAudio.Play();
+            // }
         }
         else{
-            rocketMainAudio.Stop();
+            mainThrustSound.Stop();
+            // rocketMainAudio.Stop();
         }
     }
 
