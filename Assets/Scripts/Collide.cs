@@ -3,12 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class Collide : MonoBehaviour
 {
+    // parameters
     public float delayRestartLevel = 3f;
     public float delayNextLevel = 3f;
     public AudioClip landingSuccessSound;
     public AudioClip crashExplosionSound;
 
-    void Start(){
+    // caching
+    AudioSource audioSource; 
+
+    void Start() {
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision other) {
@@ -27,20 +32,26 @@ public class Collide : MonoBehaviour
 
     void CrashSequence(){
         // add soundfx and particlefx
+        audioSource.PlayOneShot(crashExplosionSound);
+        // crashExplosionSound.Play();
+
         Debug.Log("exploding rocket");
         GetComponent<Movement>().enabled = false;
-        crashExplosionSound.Play();
+
         Invoke("ReloadLevel", delayRestartLevel);
         // ReloadLevel();
     }
 
     void ReachLanding(){
         // add soundfx and particlefx
+        audioSource.PlayOneShot(landingSuccessSound);
+        // landingSuccessSound.Play();
+
         Debug.Log("landing success!");
-        // LoadNextLevel();
         GetComponent<Movement>().enabled = false;
-        landingSuccessSound.Play();
+        
         Invoke("LoadNextLevel", delayNextLevel);
+        // LoadNextLevel();
     }
 
     void ReloadLevel(){

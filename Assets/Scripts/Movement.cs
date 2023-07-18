@@ -9,12 +9,14 @@ public class Movement : MonoBehaviour
     public AudioClip mainThrustSound;
 
     Rigidbody rb;
+    AudioSource audioSource;
     // AudioSource rocketMainAudio; // maybe return to this approach instead of .Play...()
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rocketMainAudio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
+        // rocketMainAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,13 +29,13 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
 
-            mainThrustSound.Play();
+            audioSource.PlayOneShot(mainThrustSound);
             // if(!rocketMainAudio.isPlaying){
             //     rocketMainAudio.Play();
             // }
         }
         else{
-            mainThrustSound.Stop();
+            // mainThrustSound.Stop();
             // rocketMainAudio.Stop();
         }
     }
