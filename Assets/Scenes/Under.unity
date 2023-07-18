@@ -443,10 +443,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 1748145450687724163, guid: 566035cc82573a9409422c503e64f20e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4804872064926159422, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -489,18 +485,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804872064926159422, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5579670317179556131, guid: 566035cc82573a9409422c503e64f20e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320702879288772009, guid: 566035cc82573a9409422c503e64f20e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692802067905392246, guid: 566035cc82573a9409422c503e64f20e, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
