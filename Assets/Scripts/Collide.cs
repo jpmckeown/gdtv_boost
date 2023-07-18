@@ -37,6 +37,8 @@ public class Collide : MonoBehaviour
 
     void CrashSequence(){
         inTransition = true;
+        audioSource.Stop(); // engine noise no more
+
         // add soundfx and particlefx
         audioSource.PlayOneShot(crashExplosionSound);
         // crashExplosionSound.Play();
@@ -50,6 +52,8 @@ public class Collide : MonoBehaviour
 
     void ReachLanding(){
         inTransition = true;
+                audioSource.Stop(); // engine noise no more
+                
         // add soundfx and particlefx
         audioSource.PlayOneShot(landingSuccessSound);
         // landingSuccessSound.Play();
