@@ -10,13 +10,17 @@ public class Collide : MonoBehaviour
     public AudioClip crashExplosionSound;
 
     // caching
-    AudioSource audioSource; 
+    AudioSource audioSource;
+
+    // state
+    bool inTransition = false;
 
     void Start() {
         audioSource = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision other) {
+        if(!inTransition) {
         switch(other.gameObject.tag){
             case "Finish":
                 ReachLanding();
@@ -28,9 +32,11 @@ public class Collide : MonoBehaviour
                 CrashSequence();
                 break;
         }
+        }
     }
 
     void CrashSequence(){
+        inTransition = true;
         // add soundfx and particlefx
         audioSource.PlayOneShot(crashExplosionSound);
         // crashExplosionSound.Play();
@@ -43,6 +49,7 @@ public class Collide : MonoBehaviour
     }
 
     void ReachLanding(){
+        inTransition = true;
         // add soundfx and particlefx
         audioSource.PlayOneShot(landingSuccessSound);
         // landingSuccessSound.Play();
