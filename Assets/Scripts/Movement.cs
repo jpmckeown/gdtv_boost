@@ -21,6 +21,9 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKey(KeyCode.L)) {
+            // LoadNextLevel();
+        }
         mainEngine();
         rotateBurst();
     }
