@@ -14,7 +14,6 @@ public class Collide : MonoBehaviour
 
     // caching
     AudioSource audioSource;
-    ParticleSystem particleSystem; // ???
 
     // state
     bool inTransition = false;

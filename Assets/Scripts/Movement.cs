@@ -8,6 +8,10 @@ public class Movement : MonoBehaviour
     public float sideThrust = 80f;
     public AudioClip mainThrustSound;
 
+        public ParticleSystem mainDriveParticles;
+    public ParticleSystem leftThrustParticles;
+    public ParticleSystem rightThrustParticles;
+
     Rigidbody rb;
     AudioSource audioSource;
     // AudioSource rocketMainAudio; // maybe return to this approach instead of .Play...()
@@ -17,6 +21,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         // rocketMainAudio = GetComponent<AudioSource>();
+        mainDriveParticles = GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -32,14 +37,18 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)) {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
 
-            audioSource.PlayOneShot(mainThrustSound);
-            // if(!rocketMainAudio.isPlaying){
-            //     rocketMainAudio.Play();
-            // }
+            if(!audioSource.isPlaying){
+                audioSource.PlayOneShot(mainThrustSound);
+            }
+            if(!mainDriveParticles.isPlaying) {
+                mainDriveParticles.Play();
+            }
+            
+
         }
         else{
-            // mainThrustSound.Stop();
-            // rocketMainAudio.Stop();
+            audioSource.Stop();
+            mainDriveParticles.Stop();
         }
     }
 
@@ -48,10 +57,12 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.A))
         {
             ApplyRotation(sideThrust);
+            leftThrustParticles.Play();
         }
         else if(Input.GetKey(KeyCode.D))
         {
             ApplyRotation(-sideThrust);
+            rightThrustParticles.Play();
         }
     }
 
