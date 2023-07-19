@@ -38,8 +38,8 @@ Transform:
   - {fileID: 6730069413878319966}
   - {fileID: 3562610340656609104}
   - {fileID: 5915609847143659295}
-  - {fileID: 1816386607406305214}
   - {fileID: 1027190587065519660}
+  - {fileID: 1816386607406305214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,6 +145,8 @@ MonoBehaviour:
   delayNextLevel: 3
   landingSuccessSound: {fileID: 8300000, guid: ba22fe7ebb36f664d800d0a46eba9593, type: 3}
   crashExplosionSound: {fileID: 8300000, guid: 28e3f173e74a65d429d825ac33796463, type: 3}
+  successParticles: {fileID: 2015965051483754600}
+  crashParticles: {fileID: 904864092345880566}
 --- !u!54 &7913181023534885047
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -648,6 +650,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
+--- !u!198 &904864092345880566 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
+  m_PrefabInstance: {fileID: 1030923214605926710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1027190587065519660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4436899185823514, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
@@ -717,5 +724,10 @@ PrefabInstance:
 --- !u!4 &1816386607406305214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4100699973242056, guid: 62198a3a5dbb64a4f9e1618929224faa, type: 3}
+  m_PrefabInstance: {fileID: 1818196882481382262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2015965051483754600 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa, type: 3}
   m_PrefabInstance: {fileID: 1818196882481382262}
   m_PrefabAsset: {fileID: 0}

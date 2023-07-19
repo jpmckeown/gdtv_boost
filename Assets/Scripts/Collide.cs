@@ -9,8 +9,12 @@ public class Collide : MonoBehaviour
     public AudioClip landingSuccessSound;
     public AudioClip crashExplosionSound;
 
+    public ParticleSystem successParticles;
+    public ParticleSystem crashParticles;
+
     // caching
     AudioSource audioSource;
+    ParticleSystem particleSystem; // ???
 
     // state
     bool inTransition = false;
@@ -21,7 +25,7 @@ public class Collide : MonoBehaviour
 
     void OnCollisionEnter(Collision other) {
         if(!inTransition) {
-        switch(other.gameObject.tag){
+        switch(other.gameObject.tag) {
             case "Finish":
                 ReachLanding();
                 break;
@@ -41,6 +45,7 @@ public class Collide : MonoBehaviour
 
         // add soundfx and particlefx
         audioSource.PlayOneShot(crashExplosionSound);
+        crashParticles.Play();
         // crashExplosionSound.Play();
 
         Debug.Log("exploding rocket");
@@ -52,17 +57,17 @@ public class Collide : MonoBehaviour
 
     void ReachLanding(){
         inTransition = true;
-                audioSource.Stop(); // engine noise no more
+        audioSource.Stop(); // engine noise no more
                 
         // add soundfx and particlefx
         audioSource.PlayOneShot(landingSuccessSound);
+        successParticles.Play();
         // landingSuccessSound.Play();
 
         Debug.Log("landing success!");
         GetComponent<Movement>().enabled = false;
         
         Invoke("LoadNextLevel", delayNextLevel);
-        // LoadNextLevel();
     }
 
     void ReloadLevel(){
