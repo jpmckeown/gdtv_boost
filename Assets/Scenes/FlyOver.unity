@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!198 &457128999 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2060325240751178196, guid: 566035cc82573a9409422c503e64f20e, type: 3}
-  m_PrefabInstance: {fileID: 1296577031750032310}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,13 +439,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 957032002185987311, guid: 566035cc82573a9409422c503e64f20e, type: 3}
-      propertyPath: mainDriveParticles
-      value: 
-      objectReference: {fileID: 457128999}
+    - target: {fileID: 1030105089200092040, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_Name
+      value: Explosion pfx
+      objectReference: {fileID: 0}
     - target: {fileID: 1235812907937581042, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818999358612116372, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_Name
+      value: Success pfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173973195203568992, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_Name
+      value: Main jet pfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143512874771783849, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_Name
+      value: Right engine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662102888529221851, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_Name
+      value: Left engine
       objectReference: {fileID: 0}
     - target: {fileID: 4804872064926159422, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_RootOrder
@@ -495,6 +506,14 @@ PrefabInstance:
     - target: {fileID: 4804872064926159422, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253543156232180695, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_Name
+      value: Left jet pfx
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049337590762839952, guid: 566035cc82573a9409422c503e64f20e, type: 3}
+      propertyPath: m_Name
+      value: Right jet pfx
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

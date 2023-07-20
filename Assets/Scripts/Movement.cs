@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float sideThrust = 80f;
     public AudioClip mainThrustSound;
 
-        public ParticleSystem mainDriveParticles;
+    public ParticleSystem mainDriveParticles;
     public ParticleSystem leftThrustParticles;
     public ParticleSystem rightThrustParticles;
 
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
             // LoadNextLevel();
         }
         mainEngine();
-        rotateBurst();
+        rocketRotation();
     }
 
     void mainEngine(){
@@ -43,8 +43,6 @@ public class Movement : MonoBehaviour
             if(!mainDriveParticles.isPlaying) {
                 mainDriveParticles.Play();
             }
-            
-
         }
         else{
             audioSource.Stop();
@@ -52,17 +50,25 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void rotateBurst(){
+    void rocketRotation(){
 
         if(Input.GetKey(KeyCode.A))
         {
             ApplyRotation(sideThrust);
-            leftThrustParticles.Play();
+            if(!leftThrustParticles.isPlaying){
+                leftThrustParticles.Play();            
+            }
         }
         else if(Input.GetKey(KeyCode.D))
         {
             ApplyRotation(-sideThrust);
-            rightThrustParticles.Play();
+            if(!rightThrustParticles.isPlaying){
+                rightThrustParticles.Play();            
+            }
+        }
+        else{
+            leftThrustParticles.Stop();
+            rightThrustParticles.Stop();
         }
     }
 

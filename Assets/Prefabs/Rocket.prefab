@@ -132,6 +132,9 @@ MonoBehaviour:
   mainThrust: 1000
   sideThrust: 200
   mainThrustSound: {fileID: 8300000, guid: eaa4e49d1010c1d4a91bd3b21339fa1a, type: 3}
+  mainDriveParticles: {fileID: 2060325240751178196}
+  leftThrustParticles: {fileID: 7856742982399343396}
+  rightThrustParticles: {fileID: 7356063641718093667}
 --- !u!114 &8425619472978621829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,9 +153,6 @@ MonoBehaviour:
   crashExplosionSound: {fileID: 8300000, guid: 28e3f173e74a65d429d825ac33796463, type: 3}
   successParticles: {fileID: 2015965051483754600}
   crashParticles: {fileID: 904864092345880566}
-  mainDriveParticles: {fileID: 2060325240751178196}
-  leftThrustParticles: {fileID: 7356063641718093667}
-  rightThrustParticles: {fileID: 7856742982399343396}
 --- !u!54 &7913181023534885047
 Rigidbody:
   m_ObjectHideFlags: 0
