@@ -17,6 +17,7 @@ public class Collide : MonoBehaviour
 
     // state
     bool inTransition = false;
+    bool collisionDisable = false;
 
     void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -30,12 +31,13 @@ public class Collide : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.L)) {
             LoadNextLevel();
         }
-        if(Input.GetKeyDown(KeyCode.C)) {
-    // s
+        else if(Input.GetKeyDown(KeyCode.C)) {
+            collisionDisable = !collisionDisable;
         }
     }
     void OnCollisionEnter(Collision other) {
-        if(!inTransition) {
+        if(inTransition || collisionDisable) { return; }
+
         switch(other.gameObject.tag) {
             case "Finish":
                 ReachLanding();
@@ -46,7 +48,6 @@ public class Collide : MonoBehaviour
             default:
                 CrashSequence();
                 break;
-        }
         }
     }
 

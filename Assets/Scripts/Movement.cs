@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float mainThrust = 400f;
+    public float mainThrust = 320f;
     public float sideThrust = 80f;
     public AudioClip mainThrustSound;
 
