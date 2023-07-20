@@ -20,8 +20,6 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        // rocketMainAudio = GetComponent<AudioSource>();
-        mainDriveParticles = GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -34,19 +32,13 @@ public class Movement : MonoBehaviour
     }
 
     void mainEngine(){
-        if(Input.GetKey(KeyCode.Space)) {
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-
-            if(!audioSource.isPlaying){
-                audioSource.PlayOneShot(mainThrustSound);
-            }
-            if(!mainDriveParticles.isPlaying) {
-                mainDriveParticles.Play();
-            }
+        if(Input.GetKey(KeyCode.Space))
+        {
+            StartMainThrust();
         }
-        else{
-            audioSource.Stop();
-            mainDriveParticles.Stop();
+        else
+        {
+            StopMainThrust();
         }
     }
 
@@ -54,21 +46,59 @@ public class Movement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.A))
         {
-            ApplyRotation(sideThrust);
-            if(!leftThrustParticles.isPlaying){
-                leftThrustParticles.Play();            
-            }
+            StartLeftThrust();
         }
         else if(Input.GetKey(KeyCode.D))
         {
-            ApplyRotation(-sideThrust);
-            if(!rightThrustParticles.isPlaying){
-                rightThrustParticles.Play();            
-            }
+            StartRightThrust();
         }
-        else{
-            leftThrustParticles.Stop();
-            rightThrustParticles.Stop();
+        else
+        {
+            StopSideThrust();
+        }
+    }
+
+    void StopMainThrust()
+    {
+        audioSource.Stop();
+        mainDriveParticles.Stop();
+    }
+
+    void StartMainThrust()
+    {
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainThrustSound);
+        }
+        if (!mainDriveParticles.isPlaying)
+        {
+            mainDriveParticles.Play();
+        }
+    }
+
+    void StopSideThrust()
+    {
+        leftThrustParticles.Stop();
+        rightThrustParticles.Stop();
+    }
+
+    void StartRightThrust()
+    {
+        ApplyRotation(sideThrust);
+        if (!rightThrustParticles.isPlaying)
+        {
+            rightThrustParticles.Play();
+        }
+    }
+
+    void StartLeftThrust()
+    {
+        ApplyRotation(-sideThrust);
+        if (!leftThrustParticles.isPlaying)
+        {
+            leftThrustParticles.Play();
         }
     }
 
