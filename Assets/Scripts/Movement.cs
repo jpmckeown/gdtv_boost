@@ -14,7 +14,6 @@ public class Movement : MonoBehaviour
 
     Rigidbody rb;
     AudioSource audioSource;
-    // AudioSource rocketMainAudio; // maybe return to this approach instead of .Play...()
 
     void Start()
     {
@@ -24,9 +23,6 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.L)) {
-            // LoadNextLevel();
-        }
         mainEngine();
         rocketRotation();
     }

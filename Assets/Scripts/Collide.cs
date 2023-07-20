@@ -22,6 +22,18 @@ public class Collide : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    void Update() {
+        DebugKeysResponse();
+    }
+
+    void DebugKeysResponse() {
+        if(Input.GetKeyDown(KeyCode.L)) {
+            LoadNextLevel();
+        }
+        if(Input.GetKeyDown(KeyCode.C)) {
+    // s
+        }
+    }
     void OnCollisionEnter(Collision other) {
         if(!inTransition) {
         switch(other.gameObject.tag) {
