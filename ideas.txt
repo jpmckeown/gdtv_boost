@@ -1,3 +1,11 @@
-Ideas for boost game
+# Ideas
+
+## Rocket boost game
 delay before restart level (time or wait for key)
 
+## Air Lift prototype
+defensive line around landing pad e.g. trenches
+terrain needed by waypoints code
+work backwards from CdL racing track? or rebuild?
+2022.3 ok? import Text package
+What kind of 
