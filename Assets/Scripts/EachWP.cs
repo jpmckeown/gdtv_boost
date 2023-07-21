@@ -53,7 +53,7 @@ public class EachWP : MonoBehaviour
     }
 
     void UpdateScoreDisplay() {
-        scoreLabel.text = "+" + Mathf.Floor(scoreFromPreviousNode) + "\n=" + Mathf.Floor(scoreFromTrackStart);
+        // scoreLabel.text = "+" + Mathf.Floor(scoreFromPreviousNode) + "\n=" + Mathf.Floor(scoreFromTrackStart);
     }
 
     // -1.0 as far left edge, 1.0 as right edge

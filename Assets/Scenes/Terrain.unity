@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569635471646315679, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432502624511483905, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_RootOrder
@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569635471646315679, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432502624511483905, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_RootOrder
@@ -486,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569635471646315679, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432502624511483905, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_RootOrder
@@ -649,7 +649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1893757622
 Transform:
   m_ObjectHideFlags: 0
@@ -696,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791333782269563643, guid: df95bcacda6fa0a4a9e685239b3d443b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7402313233049874315, guid: df95bcacda6fa0a4a9e685239b3d443b, type: 3}
       propertyPath: m_RootOrder
@@ -773,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804872064926159422, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4804872064926159422, guid: 566035cc82573a9409422c503e64f20e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -895,7 +895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569635471646315679, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8432502624511483905, guid: 0d85b20770bf0784dae2c9f3e4627ee7, type: 3}
       propertyPath: m_RootOrder
