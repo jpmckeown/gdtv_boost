@@ -4,8 +4,10 @@ public class Oscillator : MonoBehaviour
 {
     Vector3 startPosition;
     public Vector3 moveVector;
-    [SerializeField] [Range(0,1)] float moveFactor;
-    [SerializeField] float period = 7f;
+    [SerializeField] float period = 7f; // overridden
+    float moveFactor;
+    // visualise Sine value
+    // [SerializeField] [Range(0,1)] float moveFactor;
 
     void Start()
     {
@@ -15,12 +17,14 @@ public class Oscillator : MonoBehaviour
 
     void Update()
     {
-        float cycles = Time.time / period;
+        if (period <= Mathf.Epsilon) { return; }
+
+        float cycles = Time.time / period; // keeps increasing
         const float tau = Mathf.PI * 2;
         float rawSine = Mathf.Sin(cycles * tau);
 
-        moveFactor = (rawSine + 1f) / 2f;
-                Debug.Log(rawSine + ' ' + moveFactor);
+        moveFactor = (rawSine + 1f) / 2f; // normalise range -1/+1
+        // Debug.Log(rawSine + ' ' + moveFactor);
         Vector3 offset = moveVector * moveFactor;
         transform.position = startPosition + offset;
     }

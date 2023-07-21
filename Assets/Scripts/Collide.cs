@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Collide : MonoBehaviour
 {
     // parameters
-    public float delayRestartLevel = 3f;
+    public float delayRestartLevel = 6f;
     public float delayNextLevel = 3f;
     public AudioClip landingSuccessSound;
     public AudioClip crashExplosionSound;
@@ -35,6 +35,7 @@ public class Collide : MonoBehaviour
             collisionDisable = !collisionDisable;
         }
     }
+
     void OnCollisionEnter(Collision other) {
         if(inTransition || collisionDisable) { return; }
 
