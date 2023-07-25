@@ -820,16 +820,8 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9029412299460592870, guid: 24b85ae3724dc6a45b4abd86478b842c, type: 3}
-      propertyPath: moveFactor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029412299460592870, guid: 24b85ae3724dc6a45b4abd86478b842c, type: 3}
-      propertyPath: moveVector.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029412299460592870, guid: 24b85ae3724dc6a45b4abd86478b842c, type: 3}
       propertyPath: moveVector.z
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
