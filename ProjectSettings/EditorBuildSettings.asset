@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Simple_1.unity
+    guid: 762f3c1a24043cd43ad4127e9d76f981
+  - enabled: 1
     path: Assets/Scenes/Floaters.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
